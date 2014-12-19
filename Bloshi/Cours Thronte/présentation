@@ -1,0 +1,58 @@
+x-code, simulateur de device, seulement sur mac 
+seulement pour Ios
+
+
+meta name="viewport"
+
+Iphone 3 largeur 320px, hauteur css 480
+
+Iphone 4 retina 640 px, 
+
+
+
+
+content="initial-scale=1"
+
+<meta name="viewport"
+content initial-scale=1>
+
+
+
+<meta name = "mobile-web-app-capable"content="yes">
+<meta name=" apple-mobile-web-app-statut-bar-style" content="black">
+
+le texte devien blanc
+
+
+<title> Welcome ect)
+
+
+linc rel="apple-touch-icon-precomposed" 
+
+
+nav paddin et opacity fonctionne bien,
+
+img{
+	filter:blur (20px);
+
+}
+on peu utiliser des filtres pour les images 
+
+on peut pas travailler avec des liens, sinon le repasse par le navigateur
+
+
+chaque pages est une section 
+
+lien = bouton 
+
+@media (orientation) { landscale
+	
+
+}
+
+I lab  pour choper des vidéo
+
+
+ajouter thronte comme colaborateur !!!!
+
+±
