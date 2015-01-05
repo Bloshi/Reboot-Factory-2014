@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+	<html lang="fr">
+	<head>
+		<title>CHILL-OUT | Wireframe</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		<script src="js/jquery-1.11.1.min.js"></script>
+	</head>
+	<body>
+		<header>
+			<nav class="navigation">
+				<input type="checkbox" class="nav-button"/>
+				<span class="nav-ligne haut"></span>
+				<span class="nav-ligne bas"></span>
+				<ul class="ul-nav">
+					<li class="profil"><img src="img/profil.png"></li>
+					<li class="historique"><img src="img/historique.png"></li>
+					<li class="ecrou"><img src="img/ecrou.png"></li>
+				</ul>
+			</nav>
+			<div class="return"><span class="return-arrow"></span></div>
+			<h1 class="detends-toi-titre">Détends-toi</h1>
+			<h2 class="respiration-titre">Respiration</h2>
+			<h2 class="relaxation-titre">Relaxation</h2>
+			<h2 class="defouloir-titre">Défouloir</h2>
+		</header>
+			<div class="wrapper">
+				<ol class="menu">
+					<li class="respiration"><h2>Respiration</h2></li>
+					<li class="relaxation"><h2>Relaxation</h2></li>
+					<li class="defouloir"><h2>Defouloir</h2></li>
+				</ol>
+				<ul class="ul-wrapper">
+					<li>
+						<p class="respiration-pret">Prêts ?</p>
+						<div class="respiration-bar"></div>
+					</li>
+					<li>
+						<p class="relaxation-pret">Prêts ?</p>
+						<div class="relaxation-bar"></div>
+					</li>
+					<li>
+						<p class="defouloir-pret">Prêts ?</p>
+						<div class="defouloir-bar"></div>
+					</li>
+				</ul>
+			</div>
+			<footer>
+
+			</footer>
+	</body>
+	<script>
+		var detendstoititre = document.getElementsByClassName("detends-toi-titre")
+			respiration = document.getElementsByClassName("respiration"),
+			respirationtitre = document.getElementsByClassName("respiration-titre"),
+			relaxation = document.getElementsByClassName("relaxation"),
+			relaxationtitre = document.getElementsByClassName("relaxation-titre"),
+			defouloir = document.getElementsByClassName("defouloir"),
+			defouloirtitre = document.getElementsByClassName("defouloir-titre"),
+			retour = document.getElementsByClassName("return"),
+			wrapper = document.getElementsByClassName("wrapper"),
+			respirationpret = document.getElementsByClassName("respiration-pret"),
+			relaxationpret = document.getElementsByClassName("relaxation-pret"),
+			defouloirpret = document.getElementsByClassName("defouloir-pret"),
+			respirationbar = document.getElementsByClassName("respiration-bar"),
+			relaxationbar = document.getElementsByClassName("relaxation-bar"),
+			defouloirbar = document.getElementsByClassName("defouloir-bar"),
+			menu = document.getElementsByClassName("menu");
+
+
+			respiration[0].addEventListener("click", function(){
+					respiration[0].classList.add("translate-1");
+					relaxation[0].classList.add("translate-2");
+					defouloir[0].classList.add("translate-3");
+					detendstoititre[0].classList.add("opacity-off");
+					respirationtitre[0].classList.add("opacity-on");
+					wrapper[0].classList.add("content");
+					respirationpret[0].classList.add("opacity-basic");
+					relaxationpret[0].classList.add("invisible");
+					defouloirpret[0].classList.add("invisible");
+					menu[0].classList.add("translate-3");
+			});
+
+			relaxation[0].addEventListener("click", function(){
+					respiration[0].classList.add("translate-1");
+					relaxation[0].classList.add("translate-2");
+					defouloir[0].classList.add("translate-3");
+					detendstoititre[0].classList.add("opacity-off");
+					relaxationtitre[0].classList.add("opacity-on");
+					wrapper[0].classList.add("content");
+					relaxationpret[0].classList.add("opacity-basic");
+					respirationpret[0].classList.add("invisible");
+					defouloirpret[0].classList.add("invisible");
+					menu[0].classList.add("translate-3");
+			});
+
+			defouloir[0].addEventListener("click", function(){
+					respiration[0].classList.add("translate-1");
+					relaxation[0].classList.add("translate-2");
+					defouloir[0].classList.add("translate-3");
+					detendstoititre[0].classList.add("opacity-off");
+					defouloirtitre[0].classList.add("opacity-on");
+					wrapper[0].classList.add("content");
+					defouloirpret[0].classList.add("opacity-basic");
+					relaxationpret[0].classList.add("invisible");
+					respirationpret[0].classList.add("invisible");
+					menu[0].classList.add("translate-3");
+			});
+
+			respirationpret[0].addEventListener("click", function(){
+					respirationbar[0].classList.add("time");
+					respirationpret[0].classList.add("opacity-basic-off");
+			});
+			relaxationpret[0].addEventListener("click", function(){
+					relaxationbar[0].classList.add("time");
+					relaxationpret[0].classList.add("opacity-basic-off");
+			});
+			defouloirpret[0].addEventListener("click", function(){
+					defouloirbar[0].classList.add("time-2");
+					defouloirpret[0].classList.add("opacity-basic-off");
+			});
+
+
+			retour[0].addEventListener("click", function(){
+					respiration[0].classList.remove("translate-1");
+					relaxation[0].classList.remove("translate-2");
+					defouloir[0].classList.remove("translate-3");
+					detendstoititre[0].classList.remove("opacity-off");
+					defouloirtitre[0].classList.remove("opacity-on");
+					relaxationtitre[0].classList.remove("opacity-on");
+					respirationtitre[0].classList.remove("opacity-on");
+					wrapper[0].classList.remove("content");
+					respirationpret[0].classList.remove("opacity-basic");
+					relaxationpret[0].classList.remove("opacity-basic");
+					defouloirpret[0].classList.remove("opacity-basic");
+					respirationpret[0].classList.remove("invisible");
+					relaxationpret[0].classList.remove("invisible");
+					defouloirpret[0].classList.remove("invisible");
+					respirationbar[0].classList.remove("time");
+					relaxationbar[0].classList.remove("time");
+					defouloirbar[0].classList.remove("time-2");
+					respirationpret[0].classList.remove("opacity-basic-off");
+					relaxationpret[0].classList.remove("opacity-basic-off");
+					defouloirpret[0].classList.remove("opacity-basic-off");
+					menu[0].classList.remove("translate-3");
+			});
+	</script>
+	</html>
