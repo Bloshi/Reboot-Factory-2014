@@ -3,17 +3,27 @@
 	<head>
 		<title>CHILL-OUT | Wireframe</title>
 		<meta charset="UTF-8">
+		<meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="">
+		<meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#292633">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/hammer.js"></script>
 	</head>
 	<body>
 		<header>
 			<nav class="navigation">
-				<input type="checkbox" class="nav-button"/>
-				<span class="nav-ligne haut"></span>
-				<span class="nav-ligne bas"></span>
+				<div class="nav-button"/>
+					<span class="nav-ligne haut"></span>
+					<span class="nav-ligne bas"></span>
+				</div>
 				<ul class="ul-nav">
 					<li class="profil"><img src="img/profil.png"></li>
 					<li class="historique"><img src="img/historique.png"></li>
@@ -28,31 +38,31 @@
 		</header>
 			<div class="wrapper">
 				<ol class="menu">
-					<li class="respiration"><h2>Respiration</h2></li>
+					<li class="respiration"><h2>Respiration</h2>
+					</li>
 					<li class="relaxation"><h2>Relaxation</h2></li>
 					<li class="defouloir"><h2>Defouloir</h2></li>
 				</ol>
 				<ul class="ul-wrapper">
 					<li>
+						<p class="respiration-instruction">Respire au rythme de la bulle.</p>
 						<p class="respiration-pret">Prêts ?</p>
 						<div class="respiration-bar"></div>
 					</li>
 					<li>
+						<p class="relaxation-instruction">Profite de la musique et des lumières.</p>
 						<p class="relaxation-pret">Prêts ?</p>
 						<div class="relaxation-bar"></div>
 					</li>
 					<li>
+						<p class="defouloir-instruction">Tape ton écran le plus de fois possible.</p>
 						<p class="defouloir-pret">Prêts ?</p>
 						<div class="defouloir-bar"></div>
 					</li>
 				</ul>
 			</div>
-			<footer>
-
-			</footer>
-	</body>
 	<script>
-		var detendstoititre = document.getElementsByClassName("detends-toi-titre")
+		var detendstoititre = document.getElementsByClassName("detends-toi-titre"),
 			respiration = document.getElementsByClassName("respiration"),
 			respirationtitre = document.getElementsByClassName("respiration-titre"),
 			relaxation = document.getElementsByClassName("relaxation"),
@@ -67,8 +77,16 @@
 			respirationbar = document.getElementsByClassName("respiration-bar"),
 			relaxationbar = document.getElementsByClassName("relaxation-bar"),
 			defouloirbar = document.getElementsByClassName("defouloir-bar"),
-			menu = document.getElementsByClassName("menu");
-
+			respirationinstruction = document.getElementsByClassName("respiration-instruction"),
+			relaxationinstruction = document.getElementsByClassName("relaxation-instruction"),
+			defouloirinstruction = document.getElementsByClassName("defouloir-instruction"),
+			menu = document.getElementsByClassName("menu"),
+			navbutton = document.getElementsByClassName("nav-button"),
+			parametre =document.getElementsByClassName("ecrou"),
+			profil = document.getElementsByClassName("profil"),
+			historique = document.getElementsByClassName("historique"),
+			haut = document.getElementsByClassName("haut"),
+			bas = document.getElementsByClassName("bas");
 
 			respiration[0].addEventListener("click", function(){
 					respiration[0].classList.add("translate-1");
@@ -76,57 +94,78 @@
 					defouloir[0].classList.add("translate-3");
 					detendstoititre[0].classList.add("opacity-off");
 					respirationtitre[0].classList.add("opacity-on");
-					wrapper[0].classList.add("content");
 					respirationpret[0].classList.add("opacity-basic");
 					relaxationpret[0].classList.add("invisible");
 					defouloirpret[0].classList.add("invisible");
 					menu[0].classList.add("translate-3");
+					respirationinstruction[0].classList.add("opacity-basic-2");
 			});
 
 			relaxation[0].addEventListener("click", function(){
-					respiration[0].classList.add("translate-1");
-					relaxation[0].classList.add("translate-2");
-					defouloir[0].classList.add("translate-3");
+					respiration[0].classList.add("translate-3");
+					relaxation[0].classList.add("translate-1");
+					defouloir[0].classList.add("translate-2");
 					detendstoititre[0].classList.add("opacity-off");
 					relaxationtitre[0].classList.add("opacity-on");
-					wrapper[0].classList.add("content");
 					relaxationpret[0].classList.add("opacity-basic");
 					respirationpret[0].classList.add("invisible");
 					defouloirpret[0].classList.add("invisible");
 					menu[0].classList.add("translate-3");
+					relaxationinstruction[0].classList.add("opacity-basic-2");
 			});
 
 			defouloir[0].addEventListener("click", function(){
-					respiration[0].classList.add("translate-1");
+					respiration[0].classList.add("translate-3");
 					relaxation[0].classList.add("translate-2");
-					defouloir[0].classList.add("translate-3");
+					defouloir[0].classList.add("translate-1");
 					detendstoititre[0].classList.add("opacity-off");
 					defouloirtitre[0].classList.add("opacity-on");
-					wrapper[0].classList.add("content");
 					defouloirpret[0].classList.add("opacity-basic");
 					relaxationpret[0].classList.add("invisible");
 					respirationpret[0].classList.add("invisible");
 					menu[0].classList.add("translate-3");
+					defouloirinstruction[0].classList.add("opacity-basic-2");
 			});
 
 			respirationpret[0].addEventListener("click", function(){
 					respirationbar[0].classList.add("time");
 					respirationpret[0].classList.add("opacity-basic-off");
+					wrapper[0].classList.add("content");
+					respirationinstruction[0].classList.remove("opacity-basic-2");
 			});
+
 			relaxationpret[0].addEventListener("click", function(){
 					relaxationbar[0].classList.add("time");
 					relaxationpret[0].classList.add("opacity-basic-off");
+					wrapper[0].classList.add("content");
+					relaxationinstruction[0].classList.remove("opacity-basic-2");
 			});
+
 			defouloirpret[0].addEventListener("click", function(){
 					defouloirbar[0].classList.add("time-2");
 					defouloirpret[0].classList.add("opacity-basic-off");
+					wrapper[0].classList.add("content");
+					defouloirinstruction[0].classList.remove("opacity-basic-2");
 			});
-
+			navbutton[0].addEventListener("click", function(){
+					profil[0].classList.add("animation-menu-1");
+					historique[0].classList.add("animation-menu-2");
+					parametre[0].classList.add("animation-menu-3");
+					bas[0].classList.add("rotate-bas");
+					haut[0].classList.add("rotate-haut");
+					event.preventDefault()
+			});
 
 			retour[0].addEventListener("click", function(){
 					respiration[0].classList.remove("translate-1");
 					relaxation[0].classList.remove("translate-2");
 					defouloir[0].classList.remove("translate-3");
+					respiration[0].classList.remove("translate-2");
+					relaxation[0].classList.remove("translate-3");
+					defouloir[0].classList.remove("translate-1");
+					respiration[0].classList.remove("translate-3");
+					relaxation[0].classList.remove("translate-1");
+					defouloir[0].classList.remove("translate-2");
 					detendstoititre[0].classList.remove("opacity-off");
 					defouloirtitre[0].classList.remove("opacity-on");
 					relaxationtitre[0].classList.remove("opacity-on");
@@ -145,6 +184,11 @@
 					relaxationpret[0].classList.remove("opacity-basic-off");
 					defouloirpret[0].classList.remove("opacity-basic-off");
 					menu[0].classList.remove("translate-3");
+					respirationinstruction[0].classList.remove("opacity-basic-2");
+					relaxationinstruction[0].classList.remove("opacity-basic-2");
+					defouloirinstruction[0].classList.remove("opacity-basic-2");
 			});
+
 	</script>
+	</body>
 	</html>
