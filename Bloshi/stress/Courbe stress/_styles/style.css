@@ -1,0 +1,74 @@
+
+div {
+	width: 320px;
+	height: 460px;
+	background: #35313F;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+
+
+}
+
+
+
+.bleu {
+  stroke-dasharray: 250;
+
+  animation: dash 10s linear  infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 530;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+.orange {
+  stroke-dasharray: 500;
+
+  animation: dash 5s linear  infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 1039;
+  }
+}
+
+
+
+
+.rouge {
+  stroke-dasharray: 1400;
+
+  animation: dash 3s linear  infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 2800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ecran_rouge {
+  position: absolute;
+  left :319px;
+  top: 0px;
+
+}
+.ecran_orange {
+  position: absolute;
+  left: 328px;
+  top: 8px;
+}
