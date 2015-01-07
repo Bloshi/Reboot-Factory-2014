@@ -1,0 +1,92 @@
+
+div {
+	width: 320px;
+	height: 460px;
+	background: #F9F7F7‬;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+
+
+}
+
+
+
+.bleu {
+  stroke-dasharray: 250;
+
+  animation: dash 15s linear  infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 530;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+.orange {
+  stroke-dasharray: 500;
+
+  animation: dash 10s linear  infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 2000;
+  }
+  to {
+    stroke-dashoffset: 1039;
+  }
+}
+
+
+
+
+.rouge {
+  stroke-dasharray: 1400;
+
+  animation: dash 4s linear  infinite;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 2800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.ecran_rouge {
+  position: absolute;
+  left :319px;
+  top: 0px;
+
+}
+.ecran_orange {
+  position: absolute;
+  left: 328px;
+  top: 8px;
+}
+
+.ecran_rouge2 {
+  position: absolute;
+  left :319px;
+  top: 115px;
+
+}
+.ecran_orange2 {
+  position: absolute;
+  left: 0px;
+  top: 115px;
+}
+
+.ecran_vert{
+  position: absolute;
+  left: -320px;
+  top: 115px;
+}
